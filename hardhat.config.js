@@ -10,6 +10,15 @@ task("accounts", "Prints the list of accounts", async (taskArgs, hre) => {
   }
 });
 
+task("balance", "Prints an account's balance")
+.addParam("account", "The account's address")
+.setAction(async taskArgs => {
+  const account = web3.utils.toChecksumAddress(taskArgs.account);
+  const balance = await web3.eth.getBalance(account);
+
+  console.log(web3.utils.fromWei(balance, "ether"), "ETH");
+});
+
 // You need to export an object to set up your config
 // Go to https://hardhat.org/config/ to learn more
 
@@ -17,6 +26,7 @@ task("accounts", "Prints the list of accounts", async (taskArgs, hre) => {
  * @type import('hardhat/config').HardhatUserConfig
  */
 module.exports = {
+  defaultNetwork: "hardhat",
   solidity: "0.8.4",
   networks: {
     hardhat: {
