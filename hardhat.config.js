@@ -28,12 +28,11 @@ task("balance", "Prints an account's balance")
  */
 module.exports = {
   solidity: "0.8.4",
-  defaultNetwork: "hardhat",
   networks: {
     hardhat: {},
     ropsten: {
-      url: "https://ropsten.infura.io/v3/46057f70fc854bf4b3b0a15904867680",
-      accounts: [`3373b89f0f240ee48c7505361eacae7826bbc2ebf88f863dbf3db99e6a8989dc`]
+      url: "https://ropsten.infura.io/v3/0e070adefe4f4da48c20d711cebec4e6",
+      accounts: [`0x3373b89f0f240ee48c7505361eacae7826bbc2ebf88f863dbf3db99e6a8989dc`]
     },
   },
   paths: {
